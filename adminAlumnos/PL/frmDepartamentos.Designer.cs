@@ -100,6 +100,7 @@
             this.btnBorrar.TabIndex = 6;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnCancelar
             // 
@@ -119,6 +120,7 @@
             this.dvgDepartamentos.RowTemplate.Height = 24;
             this.dvgDepartamentos.Size = new System.Drawing.Size(560, 263);
             this.dvgDepartamentos.TabIndex = 8;
+            this.dvgDepartamentos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Seleccionar);
             // 
             // frmDepartamentos
             // 

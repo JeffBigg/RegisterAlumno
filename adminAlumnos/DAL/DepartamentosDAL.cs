@@ -23,6 +23,12 @@ namespace adminAlumnos.DAL
             return conexion.EjecutarComandoSinRetornoDatos("INSERT INTO Departamento(departamento) VALUES('"+oDepartamentoBLL.Departamento+"')");
         }
 
+        public int Eliminar(DepartamentoBLL oDepartamentoBLL)
+        {
+            conexion.EjecutarComandoSinRetornoDatos("DELETE FROM Departamento WHERE ID ="+oDepartamentoBLL.ID);
+
+            return 1;
+        }
         public DataSet MostrarDepartamentos()
         {
             SqlCommand sentencia = new SqlCommand("SELECT * FROM Departamento");
