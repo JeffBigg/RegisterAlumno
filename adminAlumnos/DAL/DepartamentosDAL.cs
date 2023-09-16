@@ -11,5 +11,16 @@ namespace adminAlumnos.DAL
 {
     internal class DepartamentosDAL
     {
+        ConexionDAL conexion;
+
+        public DepartamentosDAL()
+        {
+            conexion = new ConexionDAL();
+        }
+
+        public bool Agregar(DepartamentoBLL oDepartamentoBLL)
+        {
+            return conexion.EjecutarComandoSinRetornoDatos("INSERT INTO Departamento(departamento) VALUES('"+oDepartamentoBLL.Departamento+"')");
+        }
     }
 }

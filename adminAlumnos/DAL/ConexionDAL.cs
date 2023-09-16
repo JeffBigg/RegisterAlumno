@@ -28,13 +28,11 @@ namespace adminAlumnos.DAL
             {
 
                 SqlCommand Comando = new SqlCommand();
-
                 Comando.CommandText = strComando;
                 Comando.Connection = this.EstablecerConexion();
                 Conexion.Open();
                 Comando.ExecuteNonQuery();
                 Conexion.Close();
-
                 return true; 
 
             }

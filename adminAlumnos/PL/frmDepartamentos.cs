@@ -16,28 +16,29 @@ namespace adminAlumnos.PL
 {
     public partial class frmDepartamentos : Form
     {
+        DepartamentosDAL oDepartamentosDAL;
         public frmDepartamentos()
         {
+            oDepartamentosDAL = new DepartamentosDAL();
             InitializeComponent();
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            RecuperarInformacion();
-            ConexionDAL conexion = new ConexionDAL();
-
-            MessageBox.Show("Conectado.." + conexion.EjecutarComandoSinRetornoDatos("INSERT INTO Departamento(departamento) VALUES('diseno')"));
+            MessageBox.Show("Conectado..");
+            //clase DAL departamentos.. objetos que tiene la informacion de la GUI
+            oDepartamentosDAL.Agregar(RecuperarInformacion());
         }
 
-        private void RecuperarInformacion()
+        private DepartamentoBLL RecuperarInformacion()
         {
-            DepartamentoBLL oDepartamento = new DepartamentoBLL();
+            DepartamentoBLL oDepartamentoBLL = new DepartamentoBLL();
             int ID = 0; int.TryParse(txtID.Text, out ID);
-            oDepartamento.ID = ID;
-            oDepartamento.Departamento = txtNombreDepartamento.Text;
+            oDepartamentoBLL.ID = ID;
+            oDepartamentoBLL.Departamento = txtNombreDepartamento.Text;
 
-            MessageBox.Show(oDepartamento.ID.ToString());
-            MessageBox.Show(oDepartamento.Departamento);
+            return oDepartamentoBLL;
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)
