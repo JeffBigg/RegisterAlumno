@@ -22,5 +22,11 @@ namespace adminAlumnos.DAL
         {
             return conexion.EjecutarComandoSinRetornoDatos("INSERT INTO Departamento(departamento) VALUES('"+oDepartamentoBLL.Departamento+"')");
         }
+
+        public DataSet MostrarDepartamentos()
+        {
+            SqlCommand sentencia = new SqlCommand("SELECT * FROM Departamento");
+            return conexion.EjecutarSentencia(sentencia);
+        }
     }
 }

@@ -21,8 +21,11 @@ namespace adminAlumnos.PL
         {
             oDepartamentosDAL = new DepartamentosDAL();
             InitializeComponent();
-
+            dvgDepartamentos.DataSource = oDepartamentosDAL.MostrarDepartamentos().Tables[0];
         }
+
+
+
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
