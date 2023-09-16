@@ -22,6 +22,7 @@ namespace adminAlumnos.DAL
         {
             SqlCommand SQLComando = new SqlCommand("INSERT INTO Departamento VALUES(@Departamente)");
             SQLComando.Parameters.Add("@Departamente",SqlDbType.VarChar).Value=oDepartamentoBLL.Departamento;
+
             return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
 
 
@@ -29,21 +30,29 @@ namespace adminAlumnos.DAL
             //return conexion.EjecutarComandoSinRetornoDatos("INSERT INTO Departamento(departamento) VALUES('"+oDepartamentoBLL.Departamento+"')");
         }
 
-        public int Eliminar(DepartamentoBLL oDepartamentoBLL)
+        public bool Eliminar(DepartamentoBLL oDepartamentoBLL)
         {
-            conexion.EjecutarComandoSinRetornoDatos("DELETE FROM Departamento WHERE ID ="+oDepartamentoBLL.ID);
+            SqlCommand SQLComando = new SqlCommand("DELETE FROM Departamento WHERE ID=@ID");
+            SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = oDepartamentoBLL.ID;
 
-            return 1;
+            return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
+
+            //conexion.EjecutarComandoSinRetornoDatos("DELETE FROM Departamento WHERE ID ="+oDepartamentoBLL.ID);    
         }
 
-        public int Modificar(DepartamentoBLL oDepartamentoBLL)
+        public bool Modificar(DepartamentoBLL oDepartamentoBLL)
         {
+            SqlCommand SQLComando = new SqlCommand("UPDATE Departamento SET departamento=@Departamento WHERE ID=@ID");
+            SQLComando.Parameters.Add("@Departamento", SqlDbType.VarChar).Value = oDepartamentoBLL.Departamento;
+            SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = oDepartamentoBLL.ID;
 
-            conexion.EjecutarComandoSinRetornoDatos("UPDATE Departamento " +
+            return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
+
+            /*conexion.EjecutarComandoSinRetornoDatos("UPDATE Departamento " +
                 " SET departamento='"+oDepartamentoBLL.Departamento+ "'" +
-                " WHERE ID =" + oDepartamentoBLL.ID);
+                " WHERE ID =" + oDepartamentoBLL.ID);*/
 
-            return 1;
+
         }
 
         public DataSet MostrarDepartamentos()

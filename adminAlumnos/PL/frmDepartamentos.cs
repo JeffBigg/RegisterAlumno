@@ -22,6 +22,7 @@ namespace adminAlumnos.PL
             oDepartamentosDAL = new DepartamentosDAL();
             InitializeComponent();
             LlegarGrid();
+            LimpiarEntradas();
         }
 
 
@@ -33,6 +34,7 @@ namespace adminAlumnos.PL
             //clase DAL departamentos.. objetos que tiene la informacion de la GUI
             oDepartamentosDAL.Agregar(RecuperarInformacion());
             LlegarGrid();
+            LimpiarEntradas();
         }
 
         private DepartamentoBLL RecuperarInformacion()
@@ -54,7 +56,13 @@ namespace adminAlumnos.PL
         {
             int indice = e.RowIndex;
             txtID.Text = dvgDepartamentos.Rows[indice].Cells[0].Value.ToString();
-            txtNombreDepartamento.Text = dvgDepartamentos.Rows[indice].Cells[1].Value.ToString();   
+            txtNombreDepartamento.Text = dvgDepartamentos.Rows[indice].Cells[1].Value.ToString();
+
+            btnAgregar.Enabled = false;
+            btnBorrar.Enabled = true;
+            btnModificar.Enabled = true;
+            btnCancelar.Enabled = true;
+
 
         }
 
@@ -62,6 +70,7 @@ namespace adminAlumnos.PL
         {
             oDepartamentosDAL.Eliminar(RecuperarInformacion());
             LlegarGrid();
+            LimpiarEntradas();
 
         }
 
@@ -69,6 +78,7 @@ namespace adminAlumnos.PL
         {
             oDepartamentosDAL.Modificar(RecuperarInformacion());
             LlegarGrid();
+            LimpiarEntradas();
         }
 
         public void LlegarGrid()
@@ -76,6 +86,23 @@ namespace adminAlumnos.PL
 
             dvgDepartamentos.DataSource = oDepartamentosDAL.MostrarDepartamentos().Tables[0];
 
+        }
+
+        public void LimpiarEntradas()
+        {
+            txtID.Text = "";
+            txtNombreDepartamento.Text = "";
+
+            btnAgregar.Enabled = true;
+            btnBorrar.Enabled = false;
+            btnModificar.Enabled = false;
+            btnCancelar.Enabled = false;
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarEntradas();
         }
     }
 }

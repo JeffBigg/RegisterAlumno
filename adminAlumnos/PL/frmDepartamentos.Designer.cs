@@ -62,6 +62,7 @@
             // 
             this.txtID.Location = new System.Drawing.Point(64, 50);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(211, 22);
             this.txtID.TabIndex = 2;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
@@ -87,6 +88,7 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.Enabled = false;
             this.btnModificar.Image = global::adminAlumnos.Properties.Resources.editar;
             this.btnModificar.Location = new System.Drawing.Point(211, 92);
             this.btnModificar.Name = "btnModificar";
@@ -119,6 +121,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // dvgDepartamentos
             // 
