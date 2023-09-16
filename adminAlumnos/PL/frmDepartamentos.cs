@@ -65,5 +65,11 @@ namespace adminAlumnos.PL
             dvgDepartamentos.DataSource = oDepartamentosDAL.MostrarDepartamentos().Tables[0];
 
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            oDepartamentosDAL.Modificar(RecuperarInformacion());
+            dvgDepartamentos.DataSource = oDepartamentosDAL.MostrarDepartamentos().Tables[0];
+        }
     }
 }

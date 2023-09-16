@@ -29,6 +29,17 @@ namespace adminAlumnos.DAL
 
             return 1;
         }
+
+        public int Modificar(DepartamentoBLL oDepartamentoBLL)
+        {
+
+            conexion.EjecutarComandoSinRetornoDatos("UPDATE Departamento " +
+                " SET departamento='"+oDepartamentoBLL.Departamento+ "'" +
+                " WHERE ID =" + oDepartamentoBLL.ID);
+
+            return 1;
+        }
+
         public DataSet MostrarDepartamentos()
         {
             SqlCommand sentencia = new SqlCommand("SELECT * FROM Departamento");
