@@ -21,7 +21,7 @@ namespace adminAlumnos.PL
         {
             oDepartamentosDAL = new DepartamentosDAL();
             InitializeComponent();
-            dvgDepartamentos.DataSource = oDepartamentosDAL.MostrarDepartamentos().Tables[0];
+            LlegarGrid();
         }
 
 
@@ -32,8 +32,7 @@ namespace adminAlumnos.PL
             MessageBox.Show("Conectado..");
             //clase DAL departamentos.. objetos que tiene la informacion de la GUI
             oDepartamentosDAL.Agregar(RecuperarInformacion());
-            dvgDepartamentos.DataSource = oDepartamentosDAL.MostrarDepartamentos().Tables[0];
-
+            LlegarGrid();
         }
 
         private DepartamentoBLL RecuperarInformacion()
@@ -62,14 +61,21 @@ namespace adminAlumnos.PL
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             oDepartamentosDAL.Eliminar(RecuperarInformacion());
-            dvgDepartamentos.DataSource = oDepartamentosDAL.MostrarDepartamentos().Tables[0];
+            LlegarGrid();
 
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             oDepartamentosDAL.Modificar(RecuperarInformacion());
+            LlegarGrid();
+        }
+
+        public void LlegarGrid()
+        {
+
             dvgDepartamentos.DataSource = oDepartamentosDAL.MostrarDepartamentos().Tables[0];
+
         }
     }
 }
