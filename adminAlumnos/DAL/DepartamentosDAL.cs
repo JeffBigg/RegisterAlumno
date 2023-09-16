@@ -20,7 +20,13 @@ namespace adminAlumnos.DAL
 
         public bool Agregar(DepartamentoBLL oDepartamentoBLL)
         {
-            return conexion.EjecutarComandoSinRetornoDatos("INSERT INTO Departamento(departamento) VALUES('"+oDepartamentoBLL.Departamento+"')");
+            SqlCommand SQLComando = new SqlCommand("INSERT INTO Departamento VALUES(@Departamente)");
+            SQLComando.Parameters.Add("@Departamente",SqlDbType.VarChar).Value=oDepartamentoBLL.Departamento;
+            return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
+
+
+
+            //return conexion.EjecutarComandoSinRetornoDatos("INSERT INTO Departamento(departamento) VALUES('"+oDepartamentoBLL.Departamento+"')");
         }
 
         public int Eliminar(DepartamentoBLL oDepartamentoBLL)

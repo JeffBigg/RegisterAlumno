@@ -22,13 +22,14 @@ namespace adminAlumnos.DAL
             return this.Conexion;
 
         }
-        public bool EjecutarComandoSinRetornoDatos(string strComando)
+
+        //Metodo insert, delete y update
+        public bool EjecutarComandoSinRetornoDatos(SqlCommand SQLComando)
         {
             try
             {
 
-                SqlCommand Comando = new SqlCommand();
-                Comando.CommandText = strComando;
+                SqlCommand Comando = SQLComando;
                 Comando.Connection = this.EstablecerConexion();
                 Conexion.Open();
                 Comando.ExecuteNonQuery();
@@ -41,6 +42,27 @@ namespace adminAlumnos.DAL
                 return false;
             }
         }
+        public bool EjecutarComandoSinRetornoDatos(string strComando)
+        {
+            try
+            {
+
+                SqlCommand Comando = new SqlCommand();
+                Comando.CommandText = strComando;
+                Comando.Connection = this.EstablecerConexion();
+                Conexion.Open();
+                Comando.ExecuteNonQuery();
+                Conexion.Close();
+                return true;
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
         //SELECT retorno de datos
         public DataSet EjecutarSentencia(SqlCommand sqlComando)
         {
