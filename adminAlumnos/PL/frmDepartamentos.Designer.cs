@@ -43,7 +43,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(61, 31);
+            this.label1.Location = new System.Drawing.Point(61, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 16);
             this.label1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(323, 31);
+            this.label2.Location = new System.Drawing.Point(230, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 16);
             this.label2.TabIndex = 1;
@@ -61,17 +61,19 @@
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(64, 50);
+            this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(211, 22);
+            this.txtID.Size = new System.Drawing.Size(125, 36);
             this.txtID.TabIndex = 2;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // txtNombreDepartamento
             // 
-            this.txtNombreDepartamento.Location = new System.Drawing.Point(326, 50);
+            this.txtNombreDepartamento.Location = new System.Drawing.Point(233, 50);
+            this.txtNombreDepartamento.Multiline = true;
             this.txtNombreDepartamento.Name = "txtNombreDepartamento";
-            this.txtNombreDepartamento.Size = new System.Drawing.Size(298, 22);
+            this.txtNombreDepartamento.Size = new System.Drawing.Size(391, 36);
             this.txtNombreDepartamento.TabIndex = 3;
             // 
             // btnAgregar
@@ -125,8 +127,10 @@
             // 
             // dvgDepartamentos
             // 
+            this.dvgDepartamentos.AllowUserToAddRows = false;
+            this.dvgDepartamentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgDepartamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgDepartamentos.Location = new System.Drawing.Point(64, 141);
+            this.dvgDepartamentos.Location = new System.Drawing.Point(64, 150);
             this.dvgDepartamentos.Name = "dvgDepartamentos";
             this.dvgDepartamentos.RowHeadersWidth = 51;
             this.dvgDepartamentos.RowTemplate.Height = 24;
@@ -138,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 486);
+            this.ClientSize = new System.Drawing.Size(678, 472);
             this.Controls.Add(this.dvgDepartamentos);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBorrar);

@@ -55,14 +55,21 @@ namespace adminAlumnos.PL
         private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
         {
             int indice = e.RowIndex;
-            txtID.Text = dvgDepartamentos.Rows[indice].Cells[0].Value.ToString();
-            txtNombreDepartamento.Text = dvgDepartamentos.Rows[indice].Cells[1].Value.ToString();
 
-            btnAgregar.Enabled = false;
-            btnBorrar.Enabled = true;
-            btnModificar.Enabled = true;
-            btnCancelar.Enabled = true;
+            dvgDepartamentos.ClearSelection();
 
+            if (indice>=0)
+            {
+
+
+                txtID.Text = dvgDepartamentos.Rows[indice].Cells[0].Value.ToString();
+                txtNombreDepartamento.Text = dvgDepartamentos.Rows[indice].Cells[1].Value.ToString();
+
+                btnAgregar.Enabled = false;
+                btnBorrar.Enabled = true;
+                btnModificar.Enabled = true;
+                btnCancelar.Enabled = true;
+            }
 
         }
 
@@ -83,8 +90,10 @@ namespace adminAlumnos.PL
 
         public void LlegarGrid()
         {
-
             dvgDepartamentos.DataSource = oDepartamentosDAL.MostrarDepartamentos().Tables[0];
+
+            dvgDepartamentos.Columns[0].HeaderText = "ID";
+            dvgDepartamentos.Columns[1].HeaderText = "Nombre Departamento";
 
         }
 
