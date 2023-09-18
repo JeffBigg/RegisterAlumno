@@ -23,5 +23,11 @@ namespace adminAlumnos
             frmDepartamentos formularioDepartamentos = new frmDepartamentos();
             formularioDepartamentos.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmEmpleados formularioEmpleados= new frmEmpleados();
+            formularioEmpleados.Show();
+        }
     }
 }
