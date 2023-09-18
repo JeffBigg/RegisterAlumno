@@ -162,9 +162,9 @@
             // btnModificar
             // 
             this.btnModificar.Image = global::adminAlumnos.Properties.Resources.editar;
-            this.btnModificar.Location = new System.Drawing.Point(469, 264);
+            this.btnModificar.Location = new System.Drawing.Point(454, 264);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(93, 44);
+            this.btnModificar.Size = new System.Drawing.Size(108, 44);
             this.btnModificar.TabIndex = 16;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -173,7 +173,7 @@
             // btnBorrar
             // 
             this.btnBorrar.Image = global::adminAlumnos.Properties.Resources.borrar;
-            this.btnBorrar.Location = new System.Drawing.Point(604, 265);
+            this.btnBorrar.Location = new System.Drawing.Point(583, 264);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(93, 43);
             this.btnBorrar.TabIndex = 17;
@@ -184,9 +184,9 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = global::adminAlumnos.Properties.Resources.archivo;
-            this.btnCancelar.Location = new System.Drawing.Point(725, 265);
+            this.btnCancelar.Location = new System.Drawing.Point(710, 263);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(93, 44);
+            this.btnCancelar.Size = new System.Drawing.Size(108, 44);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
