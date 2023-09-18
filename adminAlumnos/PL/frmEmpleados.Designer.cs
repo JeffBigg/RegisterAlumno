@@ -40,15 +40,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.picFoto = new System.Windows.Forms.PictureBox();
-            this.btnExaminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
+            this.btnExaminar = new System.Windows.Forms.Button();
+            this.picFoto = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -148,58 +148,48 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Departamento:";
             // 
-            // picFoto
-            // 
-            this.picFoto.Location = new System.Drawing.Point(84, 49);
-            this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(207, 195);
-            this.picFoto.TabIndex = 13;
-            this.picFoto.TabStop = false;
-            // 
-            // btnExaminar
-            // 
-            this.btnExaminar.Location = new System.Drawing.Point(84, 265);
-            this.btnExaminar.Name = "btnExaminar";
-            this.btnExaminar.Size = new System.Drawing.Size(207, 23);
-            this.btnExaminar.TabIndex = 14;
-            this.btnExaminar.Text = "Examinar...";
-            this.btnExaminar.UseVisualStyleBackColor = true;
-            // 
             // btnAgregar
             // 
+            this.btnAgregar.Image = global::adminAlumnos.Properties.Resources.boton_mas;
             this.btnAgregar.Location = new System.Drawing.Point(333, 264);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(93, 44);
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(437, 264);
+            this.btnModificar.Image = global::adminAlumnos.Properties.Resources.editar;
+            this.btnModificar.Location = new System.Drawing.Point(469, 264);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(93, 44);
             this.btnModificar.TabIndex = 16;
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(536, 265);
+            this.btnBorrar.Image = global::adminAlumnos.Properties.Resources.borrar;
+            this.btnBorrar.Location = new System.Drawing.Point(604, 265);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.Size = new System.Drawing.Size(93, 43);
             this.btnBorrar.TabIndex = 17;
             this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBorrar.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(634, 264);
+            this.btnCancelar.Image = global::adminAlumnos.Properties.Resources.archivo;
+            this.btnCancelar.Location = new System.Drawing.Point(725, 265);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(93, 44);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // dgvEmpleados
@@ -211,6 +201,28 @@
             this.dgvEmpleados.RowTemplate.Height = 24;
             this.dgvEmpleados.Size = new System.Drawing.Size(734, 182);
             this.dgvEmpleados.TabIndex = 19;
+            // 
+            // btnExaminar
+            // 
+            this.btnExaminar.Image = global::adminAlumnos.Properties.Resources.buscar;
+            this.btnExaminar.Location = new System.Drawing.Point(84, 265);
+            this.btnExaminar.Name = "btnExaminar";
+            this.btnExaminar.Size = new System.Drawing.Size(207, 43);
+            this.btnExaminar.TabIndex = 14;
+            this.btnExaminar.Text = "Examinar...";
+            this.btnExaminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExaminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExaminar.UseVisualStyleBackColor = true;
+            this.btnExaminar.Click += new System.EventHandler(this.btnExaminar_Click);
+            // 
+            // picFoto
+            // 
+            this.picFoto.Location = new System.Drawing.Point(84, 49);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(207, 195);
+            this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFoto.TabIndex = 13;
+            this.picFoto.TabStop = false;
             // 
             // frmEmpleados
             // 
@@ -238,8 +250,9 @@
             this.Controls.Add(this.label1);
             this.Name = "frmEmpleados";
             this.Text = " ";
-            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
+            this.Load += new System.EventHandler(this.frmEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
