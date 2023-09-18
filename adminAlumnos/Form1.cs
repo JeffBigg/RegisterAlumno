@@ -1,4 +1,5 @@
-﻿using System;
+﻿using adminAlumnos.PL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace adminAlumnos
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            frmDepartamentos formularioDepartamentos = new frmDepartamentos();
+            formularioDepartamentos.Show();
         }
     }
 }
