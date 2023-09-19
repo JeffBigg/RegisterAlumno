@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using adminAlumnos.BLL;
+using System.Windows.Forms;
 
 namespace adminAlumnos.DAL
 {
@@ -26,11 +27,10 @@ namespace adminAlumnos.DAL
             SQLComando.Parameters.Add("@Correo", SqlDbType.VarChar).Value = oAlumnoBLL.Correo;
 
             SqlParameter fotoParam = new SqlParameter("@Foto", SqlDbType.VarBinary);
-            fotoParam.Value = oAlumnoBLL.Foto; // Asumiendo que oAlumnoBLL.Foto es un arreglo de bytes
+            fotoParam.Value = oAlumnoBLL.Foto;
             SQLComando.Parameters.Add(fotoParam);
 
             return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
-
         }
         public bool Eliminar(AlumnosBLL oAlumnoBLL)
         {

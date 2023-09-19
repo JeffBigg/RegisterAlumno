@@ -49,7 +49,6 @@ namespace adminAlumnos.PL
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Conectado..");
             oAlumnoDAL.Agregar(RecolectarDatos());
             LlenarGrid();
             LimpiarEntradas();

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using adminAlumnos.BLL;
+using System.Windows.Forms;
 
 namespace adminAlumnos.DAL
 {
@@ -20,6 +21,7 @@ namespace adminAlumnos.DAL
 
         public bool Agregar(DepartamentoBLL oDepartamentoBLL)
         {
+
             SqlCommand SQLComando = new SqlCommand("INSERT INTO Departamento VALUES(@Departamente)");
             SQLComando.Parameters.Add("@Departamente",SqlDbType.VarChar).Value=oDepartamentoBLL.Departamento;
 
