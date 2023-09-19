@@ -32,5 +32,19 @@ namespace adminAlumnos.DAL
             return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
 
         }
+        public bool Eliminar(AlumnosBLL oAlumnoBLL)
+        {
+            SqlCommand SQLComando = new SqlCommand("DELETE FROM Departamento WHERE ID=@ID");
+            SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = oAlumnoBLL.ID;
+
+            return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
+
+        }
+
+        public DataSet MostrarAlumnos()
+        {
+            SqlCommand sentencia = new SqlCommand("SELECT * FROM Empleado");
+            return conexion.EjecutarSentencia(sentencia);
+        }
     }
 }

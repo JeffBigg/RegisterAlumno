@@ -33,8 +33,7 @@ namespace adminAlumnos.DAL
             SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = oDepartamentoBLL.ID;
 
             return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
-
-            //conexion.EjecutarComandoSinRetornoDatos("DELETE FROM Departamento WHERE ID ="+oDepartamentoBLL.ID);    
+    
         }
 
         public bool Modificar(DepartamentoBLL oDepartamentoBLL)

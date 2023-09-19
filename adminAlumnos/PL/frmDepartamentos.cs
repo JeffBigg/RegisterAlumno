@@ -47,11 +47,6 @@ namespace adminAlumnos.PL
             return oDepartamentoBLL;
         }
 
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
         {
             int indice = e.RowIndex;
@@ -113,5 +108,7 @@ namespace adminAlumnos.PL
         {
             LimpiarEntradas();
         }
+
+
     }
 }

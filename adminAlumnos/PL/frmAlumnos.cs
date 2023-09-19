@@ -19,19 +19,19 @@ namespace adminAlumnos.PL
         byte[] imagenByte;
         public frmAlumnos()
         {
-            oAlumnoDAL = new AlumnosDAL();          
+            oAlumnoDAL = new AlumnosDAL();    
             InitializeComponent();
+            LlenarGrid();
+            LimpiarEntradas();
         }
-
-        private void frmEmpleados_Load(object sender, EventArgs e)
+        private void frmAlumnos_Load(object sender, EventArgs e)
         {
             DepartamentosDAL objDepartamentos = new DepartamentosDAL();
             cbxDepartamento.DataSource = objDepartamentos.MostrarDepartamentos().Tables[0];
             cbxDepartamento.DisplayMember = "departamento";
             cbxDepartamento.ValueMember = "ID";
-
-
         }
+
 
         private void btnExaminar_Click(object sender, EventArgs e)
         {
@@ -51,6 +51,8 @@ namespace adminAlumnos.PL
         {
             MessageBox.Show("Conectado..");
             oAlumnoDAL.Agregar(RecolectarDatos());
+            LlenarGrid();
+            LimpiarEntradas();
 
         }
 
@@ -76,6 +78,72 @@ namespace adminAlumnos.PL
 
             return oAlumnosBLL;
         }
+        private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int indice = e.RowIndex;
+
+            dgvAlumnos.ClearSelection();
+
+            if (indice >= 0)
+            {
+
+
+                txtID.Text = dgvAlumnos.Rows[indice].Cells[0].Value.ToString();
+                txtNombre.Text = dgvAlumnos.Rows[indice].Cells[1].Value.ToString();
+                txtPrimerApellido.Text = dgvAlumnos.Rows[indice].Cells[2].Value.ToString();
+                txtSegundoApellido.Text = dgvAlumnos.Rows[indice].Cells[3].Value.ToString();
+                txtCorreo.Text = dgvAlumnos.Rows[indice].Cells[4].Value.ToString();
+
+                byte[] imagenBytes = (byte[])dgvAlumnos.Rows[indice].Cells[5].Value;
+
+                if (imagenBytes != null && imagenBytes.Length > 0)
+                {
+                    using (MemoryStream ms = new MemoryStream(imagenBytes))
+                    {
+                        picFoto.Image = Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    picFoto.Image = null; 
+                }
+
+
+                btnAgregar.Enabled = false;
+                btnBorrar.Enabled = true;
+                btnModificar.Enabled = true;
+                btnCancelar.Enabled = true;
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            oAlumnoDAL.Eliminar(RecolectarDatos());
+            LlenarGrid();
+            LimpiarEntradas();
+        }
+        public void LimpiarEntradas()
+        {
+            txtID.Text = "";
+            txtNombre.Text = "";
+            txtPrimerApellido.Text = "";
+            txtSegundoApellido.Text = "";
+            txtCorreo.Text = "";
+
+            btnAgregar.Enabled = true;
+            btnBorrar.Enabled = false;
+            btnModificar.Enabled = false;
+            btnCancelar.Enabled = false;
+
+
+
+        }
+
+        public void LlenarGrid()
+        {
+            dgvAlumnos.DataSource = oAlumnoDAL.MostrarAlumnos().Tables[0];
+        }
+
     }
 }
 

@@ -44,10 +44,10 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.dgvAlumnos = new System.Windows.Forms.DataGridView();
             this.btnExaminar = new System.Windows.Forms.Button();
             this.picFoto = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,6 +181,7 @@
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnCancelar
             // 
@@ -193,15 +194,16 @@
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // dgvEmpleados
+            // dgvAlumnos
             // 
-            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(84, 314);
-            this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.RowHeadersWidth = 51;
-            this.dgvEmpleados.RowTemplate.Height = 24;
-            this.dgvEmpleados.Size = new System.Drawing.Size(734, 182);
-            this.dgvEmpleados.TabIndex = 19;
+            this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlumnos.Location = new System.Drawing.Point(84, 314);
+            this.dgvAlumnos.Name = "dgvAlumnos";
+            this.dgvAlumnos.RowHeadersWidth = 51;
+            this.dgvAlumnos.RowTemplate.Height = 24;
+            this.dgvAlumnos.Size = new System.Drawing.Size(734, 182);
+            this.dgvAlumnos.TabIndex = 19;
+            this.dgvAlumnos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Seleccionar);
             // 
             // btnExaminar
             // 
@@ -225,12 +227,12 @@
             this.picFoto.TabIndex = 13;
             this.picFoto.TabStop = false;
             // 
-            // frmEmpleados
+            // frmAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 524);
-            this.Controls.Add(this.dgvEmpleados);
+            this.Controls.Add(this.dgvAlumnos);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnModificar);
@@ -249,10 +251,10 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label1);
-            this.Name = "frmEmpleados";
+            this.Name = "frmAlumnos";
             this.Text = " ";
-            this.Load += new System.EventHandler(this.frmEmpleados_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            this.Load += new System.EventHandler(this.frmAlumnos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -279,6 +281,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.DataGridView dgvEmpleados;
+        private System.Windows.Forms.DataGridView dgvAlumnos;
     }
 }
