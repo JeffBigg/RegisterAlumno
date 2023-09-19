@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using adminAlumnos.DAL;
+using adminAlumnos.BLL;
 
 namespace adminAlumnos.PL
 {
@@ -44,6 +45,30 @@ namespace adminAlumnos.PL
             }
         }
 
- 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            RecolectarDatos();
+        }
+
+        private void RecolectarDatos()
+        {
+            EmpleadosBLL objEmpleados  = new EmpleadosBLL();
+
+            int codigoEmpleado = 1;
+
+            int.TryParse( txtID.Text,out codigoEmpleado);
+
+            objEmpleados.ID = codigoEmpleado;
+            objEmpleados.NombreEmpleado = txtNombre.Text;
+            objEmpleados.PrimerApellido = txtPrimerApellido.Text;
+            objEmpleados.SegundoApellido = txtSegundoApellido.Text;
+            objEmpleados.Correo = txtCorreo.Text;
+
+            int IDDepartamento = 0;
+            int.TryParse(cbxDepartamento.SelectedValue.ToString(),out IDDepartamento);
+
+            objEmpleados.Departamento = IDDepartamento;
+            objEmpleados.FotoEmpleado = imagenByte;
+        }
     }
 }
