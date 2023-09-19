@@ -1,6 +1,6 @@
 ﻿namespace adminAlumnos.PL
 {
-    partial class frmEmpleados
+    partial class frmAlumnos
     {
         /// <summary>
         /// Required designer variable.

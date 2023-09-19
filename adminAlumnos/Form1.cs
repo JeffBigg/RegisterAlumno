@@ -26,7 +26,7 @@ namespace adminAlumnos
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmEmpleados formularioEmpleados= new frmEmpleados();
+            frmAlumnos formularioEmpleados= new frmAlumnos();
             formularioEmpleados.Show();
         }
     }

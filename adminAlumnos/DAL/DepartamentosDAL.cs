@@ -25,9 +25,6 @@ namespace adminAlumnos.DAL
 
             return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
 
-
-
-            //return conexion.EjecutarComandoSinRetornoDatos("INSERT INTO Departamento(departamento) VALUES('"+oDepartamentoBLL.Departamento+"')");
         }
 
         public bool Eliminar(DepartamentoBLL oDepartamentoBLL)

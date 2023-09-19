@@ -16,9 +16,9 @@ C:\Users\Razer Blader\OneDrive\Escritorio\zi sharp\adminAlumnos\bin\Debug\adminA
 C:\Users\Razer Blader\OneDrive\Escritorio\zi sharp\adminAlumnos\obj\Debug\adminAlumnos.csproj.AssemblyReference.cache
 C:\Users\Razer Blader\OneDrive\Escritorio\zi sharp\adminAlumnos\obj\Debug\adminAlumnos.Form1.resources
 C:\Users\Razer Blader\OneDrive\Escritorio\zi sharp\adminAlumnos\obj\Debug\adminAlumnos.PL.frmDepartamentos.resources
-C:\Users\Razer Blader\OneDrive\Escritorio\zi sharp\adminAlumnos\obj\Debug\adminAlumnos.PL.frmEmpleados.resources
 C:\Users\Razer Blader\OneDrive\Escritorio\zi sharp\adminAlumnos\obj\Debug\adminAlumnos.Properties.Resources.resources
 C:\Users\Razer Blader\OneDrive\Escritorio\zi sharp\adminAlumnos\obj\Debug\adminAlumnos.csproj.GenerateResource.cache
 C:\Users\Razer Blader\OneDrive\Escritorio\zi sharp\adminAlumnos\obj\Debug\adminAlumnos.csproj.CoreCompileInputs.cache
 C:\Users\Razer Blader\OneDrive\Escritorio\zi sharp\adminAlumnos\obj\Debug\adminAlumnos.exe
 C:\Users\Razer Blader\OneDrive\Escritorio\zi sharp\adminAlumnos\obj\Debug\adminAlumnos.pdb
+C:\Users\Razer Blader\OneDrive\Escritorio\zi sharp\adminAlumnos\obj\Debug\adminAlumnos.PL.frmAlumnos.resources

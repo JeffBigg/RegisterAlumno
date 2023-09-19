@@ -13,11 +13,13 @@ using adminAlumnos.BLL;
 
 namespace adminAlumnos.PL
 {
-    public partial class frmEmpleados : Form
+    public partial class frmAlumnos : Form
     {
+        AlumnosDAL oAlumnoDAL;
         byte[] imagenByte;
-        public frmEmpleados()
+        public frmAlumnos()
         {
+            oAlumnoDAL = new AlumnosDAL();          
             InitializeComponent();
         }
 
@@ -47,29 +49,33 @@ namespace adminAlumnos.PL
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            RecolectarDatos();
+            MessageBox.Show("Conectado..");
+            oAlumnoDAL.Agregar(RecolectarDatos());
+
         }
 
-        private void RecolectarDatos()
+        private AlumnosBLL RecolectarDatos()
         {
-            EmpleadosBLL objEmpleados  = new EmpleadosBLL();
+            AlumnosBLL oAlumnosBLL  = new AlumnosBLL();
 
             int codigoEmpleado = 1;
 
             int.TryParse( txtID.Text,out codigoEmpleado);
 
-            objEmpleados.ID = codigoEmpleado;
-            objEmpleados.NombreEmpleado = txtNombre.Text;
-            objEmpleados.PrimerApellido = txtPrimerApellido.Text;
-            objEmpleados.SegundoApellido = txtSegundoApellido.Text;
-            objEmpleados.Correo = txtCorreo.Text;
+            oAlumnosBLL.ID = codigoEmpleado;
+            oAlumnosBLL.Nombre = txtNombre.Text;
+            oAlumnosBLL.PrimerApellido = txtPrimerApellido.Text;
+            oAlumnosBLL.SegundoApellido = txtSegundoApellido.Text;
+            oAlumnosBLL.Correo = txtCorreo.Text;
 
             int IDDepartamento = 0;
             int.TryParse(cbxDepartamento.SelectedValue.ToString(),out IDDepartamento);
 
-            objEmpleados.Departamento = IDDepartamento;
-            objEmpleados.FotoEmpleado = imagenByte;
+            oAlumnosBLL.Departamento = IDDepartamento;
+            oAlumnosBLL.Foto = imagenByte;
+
+            return oAlumnosBLL;
         }
     }
 }
-///news
+
