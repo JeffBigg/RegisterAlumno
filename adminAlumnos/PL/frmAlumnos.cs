@@ -93,7 +93,6 @@ namespace adminAlumnos.PL
                 txtPrimerApellido.Text = dgvAlumnos.Rows[indice].Cells[2].Value.ToString();
                 txtSegundoApellido.Text = dgvAlumnos.Rows[indice].Cells[3].Value.ToString();
                 txtCorreo.Text = dgvAlumnos.Rows[indice].Cells[4].Value.ToString();
-
                 byte[] imagenBytes = (byte[])dgvAlumnos.Rows[indice].Cells[5].Value;
 
                 if (imagenBytes != null && imagenBytes.Length > 0)
@@ -129,6 +128,8 @@ namespace adminAlumnos.PL
             txtPrimerApellido.Text = "";
             txtSegundoApellido.Text = "";
             txtCorreo.Text = "";
+            picFoto.Image = null;
+
 
             btnAgregar.Enabled = true;
             btnBorrar.Enabled = false;
@@ -142,8 +143,26 @@ namespace adminAlumnos.PL
         public void LlenarGrid()
         {
             dgvAlumnos.DataSource = oAlumnoDAL.MostrarAlumnos().Tables[0];
+
+            dgvAlumnos.Columns[0].HeaderText = "ID:";
+            dgvAlumnos.Columns[1].HeaderText = "NOMBRE:";
+            dgvAlumnos.Columns[2].HeaderText = "APELLIDO P:";
+            dgvAlumnos.Columns[3].HeaderText = "APELLIDO M:";
+            dgvAlumnos.Columns[4].HeaderText = "CORREO:";
+            dgvAlumnos.Columns[5].HeaderText = "FOTO:";
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarEntradas();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            oAlumnoDAL.Modificar(RecolectarDatos());
+            LlenarGrid();
+            LimpiarEntradas();
+        }
     }
 }
 

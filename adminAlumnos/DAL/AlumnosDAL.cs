@@ -34,12 +34,27 @@ namespace adminAlumnos.DAL
         }
         public bool Eliminar(AlumnosBLL oAlumnoBLL)
         {
-            SqlCommand SQLComando = new SqlCommand("DELETE FROM Departamento WHERE ID=@ID");
+            SqlCommand SQLComando = new SqlCommand("DELETE FROM Empleado WHERE ID=@ID");
             SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = oAlumnoBLL.ID;
 
             return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
 
         }
+
+        public bool Modificar(AlumnosBLL oAlumnoBLL)
+        {
+            SqlCommand SQLComando = new SqlCommand("UPDATE Empleado SET nombre=@Nombre, primerapellido=@Apellido1, segundoapellido=@Apellido2, correo=@Correo, foto=@Foto WHERE ID=@ID");
+            SQLComando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = oAlumnoBLL.Nombre;
+            SQLComando.Parameters.Add("@Apellido1", SqlDbType.VarChar).Value = oAlumnoBLL.PrimerApellido;
+            SQLComando.Parameters.Add("@Apellido2", SqlDbType.VarChar).Value = oAlumnoBLL.SegundoApellido;
+            SQLComando.Parameters.Add("@Correo", SqlDbType.VarChar).Value = oAlumnoBLL.Correo;
+            SQLComando.Parameters.Add("@Foto", SqlDbType.VarBinary).Value = oAlumnoBLL.Foto;
+            SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = oAlumnoBLL.ID;
+
+
+            return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
+        }
+
 
         public DataSet MostrarAlumnos()
         {

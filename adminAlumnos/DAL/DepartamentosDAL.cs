@@ -43,12 +43,6 @@ namespace adminAlumnos.DAL
             SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = oDepartamentoBLL.ID;
 
             return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
-
-            /*conexion.EjecutarComandoSinRetornoDatos("UPDATE Departamento " +
-                " SET departamento='"+oDepartamentoBLL.Departamento+ "'" +
-                " WHERE ID =" + oDepartamentoBLL.ID);*/
-
-
         }
 
         public DataSet MostrarDepartamentos()
