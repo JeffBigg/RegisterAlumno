@@ -92,8 +92,7 @@ namespace adminAlumnos.PL
                 txtPrimerApellido.Text = dgvAlumnos.Rows[indice].Cells[2].Value.ToString();
                 txtSegundoApellido.Text = dgvAlumnos.Rows[indice].Cells[3].Value.ToString();
                 txtCorreo.Text = dgvAlumnos.Rows[indice].Cells[4].Value.ToString();
-                cbxDepartamento.Text = dgvAlumnos.Rows[indice].Cells[5].Value.ToString();
-                byte[] imagenBytes = (byte[])dgvAlumnos.Rows[indice].Cells[6].Value;
+                byte[] imagenBytes = (byte[])dgvAlumnos.Rows[indice].Cells[5].Value;
 
                 if (imagenBytes != null && imagenBytes.Length > 0)
                 {
@@ -104,7 +103,7 @@ namespace adminAlumnos.PL
                 }
                 else
                 {
-                    picFoto.Image = null; 
+                    picFoto.Image = null;
                 }
 
 
