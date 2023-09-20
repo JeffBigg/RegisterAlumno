@@ -58,8 +58,9 @@ namespace adminAlumnos.DAL
 
         public DataSet MostrarAlumnos()
         {
-            SqlCommand sentencia = new SqlCommand("SELECT * FROM Empleado");
+            SqlCommand sentencia = new SqlCommand("SELECT E.ID, E.nombre, E.primerapellido, E.segundoapellido, E.correo, E.foto, D.departamento FROM Empleado E LEFT JOIN Departamento D ON E.ID = D.ID");
             return conexion.EjecutarSentencia(sentencia);
         }
+
     }
 }

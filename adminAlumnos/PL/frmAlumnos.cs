@@ -141,15 +141,20 @@ namespace adminAlumnos.PL
 
         public void LlenarGrid()
         {
-            dgvAlumnos.DataSource = oAlumnoDAL.MostrarAlumnos().Tables[0];
+            DataSet dataSetAlumnos = oAlumnoDAL.MostrarAlumnos();
+            dgvAlumnos.DataSource = dataSetAlumnos.Tables[0];
 
-            dgvAlumnos.Columns[0].HeaderText = "ID:";
-            dgvAlumnos.Columns[1].HeaderText = "NOMBRE:";
-            dgvAlumnos.Columns[2].HeaderText = "APELLIDO P:";
-            dgvAlumnos.Columns[3].HeaderText = "APELLIDO M:";
-            dgvAlumnos.Columns[4].HeaderText = "CORREO:";
-            dgvAlumnos.Columns[5].HeaderText = "FOTO:";
+            dgvAlumnos.Columns[0].HeaderText = "ID";
+            dgvAlumnos.Columns[1].HeaderText = "NOMBRE";
+            dgvAlumnos.Columns[2].HeaderText = "APELLIDO P";
+            dgvAlumnos.Columns[3].HeaderText = "APELLIDO M";
+            dgvAlumnos.Columns[4].HeaderText = "CORREO";
+            dgvAlumnos.Columns[5].HeaderText = "FOTO";
+            dgvAlumnos.Columns[6].HeaderText = "ESTADO";
+
+            dgvAlumnos.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

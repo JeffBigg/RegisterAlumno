@@ -47,6 +47,8 @@
             this.dgvAlumnos = new System.Windows.Forms.DataGridView();
             this.btnExaminar = new System.Windows.Forms.Button();
             this.picFoto = new System.Windows.Forms.PictureBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
@@ -62,52 +64,62 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(333, 49);
+            this.txtID.Location = new System.Drawing.Point(333, 37);
+            this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(126, 22);
+            this.txtID.Size = new System.Drawing.Size(59, 34);
             this.txtID.TabIndex = 1;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(498, 49);
+            this.txtNombre.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(434, 37);
+            this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(320, 22);
+            this.txtNombre.Size = new System.Drawing.Size(199, 34);
             this.txtNombre.TabIndex = 2;
             // 
             // txtPrimerApellido
             // 
-            this.txtPrimerApellido.Location = new System.Drawing.Point(333, 105);
+            this.txtPrimerApellido.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrimerApellido.Location = new System.Drawing.Point(661, 37);
+            this.txtPrimerApellido.Multiline = true;
             this.txtPrimerApellido.Name = "txtPrimerApellido";
-            this.txtPrimerApellido.Size = new System.Drawing.Size(229, 22);
+            this.txtPrimerApellido.Size = new System.Drawing.Size(204, 34);
             this.txtPrimerApellido.TabIndex = 3;
             // 
             // txtSegundoApellido
             // 
-            this.txtSegundoApellido.Location = new System.Drawing.Point(583, 105);
+            this.txtSegundoApellido.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSegundoApellido.Location = new System.Drawing.Point(897, 37);
+            this.txtSegundoApellido.Multiline = true;
             this.txtSegundoApellido.Name = "txtSegundoApellido";
-            this.txtSegundoApellido.Size = new System.Drawing.Size(235, 22);
+            this.txtSegundoApellido.Size = new System.Drawing.Size(207, 34);
             this.txtSegundoApellido.TabIndex = 4;
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(333, 164);
+            this.txtCorreo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.Location = new System.Drawing.Point(333, 104);
+            this.txtCorreo.Multiline = true;
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(485, 22);
+            this.txtCorreo.Size = new System.Drawing.Size(346, 34);
             this.txtCorreo.TabIndex = 5;
             // 
             // cbxDepartamento
             // 
+            this.cbxDepartamento.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxDepartamento.FormattingEnabled = true;
-            this.cbxDepartamento.Location = new System.Drawing.Point(333, 220);
+            this.cbxDepartamento.Location = new System.Drawing.Point(739, 114);
             this.cbxDepartamento.Name = "cbxDepartamento";
-            this.cbxDepartamento.Size = new System.Drawing.Size(485, 24);
+            this.cbxDepartamento.Size = new System.Drawing.Size(365, 24);
             this.cbxDepartamento.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(495, 18);
+            this.label2.Location = new System.Drawing.Point(431, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 16);
             this.label2.TabIndex = 7;
@@ -116,7 +128,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(330, 86);
+            this.label3.Location = new System.Drawing.Point(658, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 16);
             this.label3.TabIndex = 8;
@@ -125,7 +137,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(580, 86);
+            this.label4.Location = new System.Drawing.Point(894, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 16);
             this.label4.TabIndex = 9;
@@ -134,7 +146,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(330, 145);
+            this.label5.Location = new System.Drawing.Point(330, 85);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 16);
             this.label5.TabIndex = 10;
@@ -143,7 +155,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(330, 201);
+            this.label7.Location = new System.Drawing.Point(736, 85);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 16);
             this.label7.TabIndex = 12;
@@ -152,7 +164,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Image = global::adminAlumnos.Properties.Resources.boton_mas;
-            this.btnAgregar.Location = new System.Drawing.Point(333, 264);
+            this.btnAgregar.Location = new System.Drawing.Point(684, 212);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(93, 44);
             this.btnAgregar.TabIndex = 15;
@@ -164,7 +176,7 @@
             // btnModificar
             // 
             this.btnModificar.Image = global::adminAlumnos.Properties.Resources.editar;
-            this.btnModificar.Location = new System.Drawing.Point(454, 264);
+            this.btnModificar.Location = new System.Drawing.Point(783, 212);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(108, 44);
             this.btnModificar.TabIndex = 16;
@@ -176,7 +188,7 @@
             // btnBorrar
             // 
             this.btnBorrar.Image = global::adminAlumnos.Properties.Resources.borrar;
-            this.btnBorrar.Location = new System.Drawing.Point(583, 264);
+            this.btnBorrar.Location = new System.Drawing.Point(897, 213);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(93, 43);
             this.btnBorrar.TabIndex = 17;
@@ -188,7 +200,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = global::adminAlumnos.Properties.Resources.archivo;
-            this.btnCancelar.Location = new System.Drawing.Point(710, 263);
+            this.btnCancelar.Location = new System.Drawing.Point(996, 213);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(108, 44);
             this.btnCancelar.TabIndex = 18;
@@ -202,18 +214,18 @@
             this.dgvAlumnos.AllowUserToAddRows = false;
             this.dgvAlumnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlumnos.Location = new System.Drawing.Point(84, 314);
+            this.dgvAlumnos.Location = new System.Drawing.Point(84, 263);
             this.dgvAlumnos.Name = "dgvAlumnos";
             this.dgvAlumnos.RowHeadersWidth = 51;
             this.dgvAlumnos.RowTemplate.Height = 24;
-            this.dgvAlumnos.Size = new System.Drawing.Size(734, 182);
+            this.dgvAlumnos.Size = new System.Drawing.Size(1020, 347);
             this.dgvAlumnos.TabIndex = 19;
             this.dgvAlumnos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Seleccionar);
             // 
             // btnExaminar
             // 
             this.btnExaminar.Image = global::adminAlumnos.Properties.Resources.buscar;
-            this.btnExaminar.Location = new System.Drawing.Point(84, 265);
+            this.btnExaminar.Location = new System.Drawing.Point(84, 211);
             this.btnExaminar.Name = "btnExaminar";
             this.btnExaminar.Size = new System.Drawing.Size(207, 43);
             this.btnExaminar.TabIndex = 14;
@@ -225,18 +237,38 @@
             // 
             // picFoto
             // 
-            this.picFoto.Location = new System.Drawing.Point(84, 49);
+            this.picFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picFoto.Location = new System.Drawing.Point(84, 18);
             this.picFoto.Name = "picFoto";
-            this.picFoto.Size = new System.Drawing.Size(207, 195);
+            this.picFoto.Size = new System.Drawing.Size(207, 187);
             this.picFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFoto.TabIndex = 13;
             this.picFoto.TabStop = false;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(523, 212);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(90, 42);
+            this.btnBuscar.TabIndex = 20;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(306, 211);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(211, 42);
+            this.textBox1.TabIndex = 21;
             // 
             // frmAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 532);
+            this.ClientSize = new System.Drawing.Size(1148, 622);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvAlumnos);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBorrar);
@@ -287,5 +319,7 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridView dgvAlumnos;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
