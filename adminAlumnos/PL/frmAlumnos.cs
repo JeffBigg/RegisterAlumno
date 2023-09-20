@@ -92,7 +92,8 @@ namespace adminAlumnos.PL
                 txtPrimerApellido.Text = dgvAlumnos.Rows[indice].Cells[2].Value.ToString();
                 txtSegundoApellido.Text = dgvAlumnos.Rows[indice].Cells[3].Value.ToString();
                 txtCorreo.Text = dgvAlumnos.Rows[indice].Cells[4].Value.ToString();
-                byte[] imagenBytes = (byte[])dgvAlumnos.Rows[indice].Cells[5].Value;
+                cbxDepartamento.Text = dgvAlumnos.Rows[indice].Cells[5].Value.ToString();
+                byte[] imagenBytes = (byte[])dgvAlumnos.Rows[indice].Cells[6].Value;
 
                 if (imagenBytes != null && imagenBytes.Length > 0)
                 {
@@ -141,18 +142,18 @@ namespace adminAlumnos.PL
 
         public void LlenarGrid()
         {
-            DataSet dataSetAlumnos = oAlumnoDAL.MostrarAlumnos();
-            dgvAlumnos.DataSource = dataSetAlumnos.Tables[0];
+
+            dgvAlumnos.DataSource = oAlumnoDAL.MostrarAlumnos().Tables[0];
 
             dgvAlumnos.Columns[0].HeaderText = "ID";
             dgvAlumnos.Columns[1].HeaderText = "NOMBRE";
             dgvAlumnos.Columns[2].HeaderText = "APELLIDO P";
             dgvAlumnos.Columns[3].HeaderText = "APELLIDO M";
             dgvAlumnos.Columns[4].HeaderText = "CORREO";
-            dgvAlumnos.Columns[5].HeaderText = "FOTO";
-            dgvAlumnos.Columns[6].HeaderText = "ESTADO";
+            dgvAlumnos.Columns[5].HeaderText = "ESTADO";
+            dgvAlumnos.Columns[6].HeaderText = "FOTO";
 
-            dgvAlumnos.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
         }
 
 

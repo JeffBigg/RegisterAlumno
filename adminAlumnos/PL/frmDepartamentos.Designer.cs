@@ -153,6 +153,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmDepartamentos";
             this.Text = "frmDepartamentos";
+            this.Load += new System.EventHandler(this.frmDepartamentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgDepartamentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

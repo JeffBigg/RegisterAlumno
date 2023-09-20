@@ -109,6 +109,9 @@ namespace adminAlumnos.PL
             LimpiarEntradas();
         }
 
+        private void frmDepartamentos_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
