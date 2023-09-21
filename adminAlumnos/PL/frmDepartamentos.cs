@@ -88,7 +88,7 @@ namespace adminAlumnos.PL
             dvgDepartamentos.DataSource = oDepartamentosDAL.MostrarDepartamentos().Tables[0];
 
             dvgDepartamentos.Columns[0].HeaderText = "ID:";
-            dvgDepartamentos.Columns[1].HeaderText = "ESTADO:";
+            dvgDepartamentos.Columns[1].HeaderText = "NIVEL:";
 
         }
 

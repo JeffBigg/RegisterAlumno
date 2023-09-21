@@ -12,7 +12,7 @@ namespace adminAlumnos.DAL
     class ConexionDAL
     {
 
-        private string CadenaConexion = "Data Source=JEFFBIGG22;Initial Catalog=dbSistema;Integrated Security=True";
+        private string CadenaConexion = "Data Source=localhost;Initial Catalog=dbSistema;Integrated Security=True";
         SqlConnection Conexion;
 
         public SqlConnection EstablecerConexion()
