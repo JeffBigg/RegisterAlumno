@@ -157,9 +157,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(736, 85);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 16);
+            this.label7.Size = new System.Drawing.Size(41, 16);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Departamento:";
+            this.label7.Text = "Nivel:";
             // 
             // btnAgregar
             // 
