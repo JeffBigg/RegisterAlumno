@@ -150,7 +150,7 @@ namespace adminAlumnos.PL
             dgvAlumnos.Columns[3].HeaderText = "APELLIDO M";
             dgvAlumnos.Columns[4].HeaderText = "CORREO";
             dgvAlumnos.Columns[5].HeaderText = "FOTO";
-            dgvAlumnos.Columns[6].HeaderText = "ESTADO";
+            dgvAlumnos.Columns[6].HeaderText = "NIVEL";
 
 
         }

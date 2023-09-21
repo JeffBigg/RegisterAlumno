@@ -118,5 +118,8 @@
   <ItemGroup>
     <None Include="Resources\buscar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\premium_photo-1667113478918-cfef93399991.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

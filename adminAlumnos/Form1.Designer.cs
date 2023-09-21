@@ -45,10 +45,10 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(202, 297);
+            this.pictureBox3.Location = new System.Drawing.Point(202, 290);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(43, 23);
+            this.pictureBox3.Size = new System.Drawing.Size(43, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 33;
             this.pictureBox3.TabStop = false;
@@ -58,10 +58,10 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(202, 238);
+            this.pictureBox2.Location = new System.Drawing.Point(202, 229);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(43, 23);
+            this.pictureBox2.Size = new System.Drawing.Size(43, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 32;
             this.pictureBox2.TabStop = false;
@@ -93,19 +93,23 @@
             // txtContraseña
             // 
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContraseña.Location = new System.Drawing.Point(253, 296);
+            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña.Location = new System.Drawing.Point(253, 290);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(4);
+            this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(257, 15);
+            this.txtContraseña.Size = new System.Drawing.Size(257, 28);
             this.txtContraseña.TabIndex = 27;
             // 
             // txtNombreUsuario
             // 
             this.txtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombreUsuario.Location = new System.Drawing.Point(253, 237);
+            this.txtNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreUsuario.Location = new System.Drawing.Point(253, 229);
             this.txtNombreUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreUsuario.Multiline = true;
             this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(257, 15);
+            this.txtNombreUsuario.Size = new System.Drawing.Size(257, 30);
             this.txtNombreUsuario.TabIndex = 26;
             // 
             // btnInicioSecion
@@ -125,6 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::adminAlumnos.Properties.Resources.premium_photo_1667113478918_cfef93399991;
             this.ClientSize = new System.Drawing.Size(728, 474);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);

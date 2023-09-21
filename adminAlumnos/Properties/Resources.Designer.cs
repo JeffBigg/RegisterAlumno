@@ -109,5 +109,15 @@ namespace adminAlumnos.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap premium_photo_1667113478918_cfef93399991 {
+            get {
+                object obj = ResourceManager.GetObject("premium_photo-1667113478918-cfef93399991", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
