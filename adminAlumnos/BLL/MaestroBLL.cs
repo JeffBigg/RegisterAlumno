@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace adminAlumnos.BLL
 {
-    internal class AlumnosBLL
+    internal class MaestroBLL
     {
         public int ID { get; set; }
         public string Nombre { get; set; }
         public string PrimerApellido { get; set;}
         public string SegundoApellido { get; set;}
-        public int Departamento { get; set; }
         public string Correo { get; set; }
-        public byte[] Foto { get; set;}
+        public int Edad { get; set; }
+        public string Nivel { get; set; }
     }
 }

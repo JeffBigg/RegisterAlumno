@@ -43,7 +43,7 @@ namespace adminAlumnos
 
                 if (resultado > 0)
                 {
-                    frmAlumnos registerForm = new frmAlumnos();
+                    frmMaestro registerForm = new frmMaestro();
                     registerForm.Show();
                     this.Hide();
                 }

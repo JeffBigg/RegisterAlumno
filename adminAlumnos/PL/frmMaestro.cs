@@ -10,42 +10,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using adminAlumnos.DAL;
 using adminAlumnos.BLL;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace adminAlumnos.PL
 {
-    public partial class frmAlumnos : Form
+    public partial class frmMaestro : Form
     {
-        AlumnosDAL oAlumnoDAL;
+        MaestroDAL oAlumnoDAL;
         byte[] imagenByte;
-        public frmAlumnos()
+        public frmMaestro()
         {
-            oAlumnoDAL = new AlumnosDAL();    
+            oAlumnoDAL = new MaestroDAL();    
             InitializeComponent();
             LlenarGrid();
             LimpiarEntradas();
         }
         private void frmAlumnos_Load(object sender, EventArgs e)
         {
-            DepartamentosDAL objDepartamentos = new DepartamentosDAL();
-            cbxDepartamento.DataSource = objDepartamentos.MostrarDepartamentos().Tables[0];
-            cbxDepartamento.DisplayMember = "departamento";
-            cbxDepartamento.ValueMember = "ID";
+
         }
 
-
-        private void btnExaminar_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog SelectorImagen = new OpenFileDialog();
-            SelectorImagen.Title = "Seleccionar Imagen";
-            if (SelectorImagen.ShowDialog() == DialogResult.OK)
-            {
-                picFoto.Image = Image.FromStream(SelectorImagen.OpenFile());
-                MemoryStream memoria = new MemoryStream();
-                picFoto.Image.Save(memoria,System.Drawing.Imaging.ImageFormat.Png);
-                imagenByte = memoria.ToArray();
-
-            }
-        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -55,27 +39,26 @@ namespace adminAlumnos.PL
 
         }
 
-        private AlumnosBLL RecolectarDatos()
+        private MaestroBLL RecolectarDatos()
         {
-            AlumnosBLL oAlumnosBLL  = new AlumnosBLL();
+            MaestroBLL oAlumnosBLL  = new MaestroBLL();
 
             int codigoEmpleado = 1;
+            int edad;
 
             int.TryParse( txtID.Text,out codigoEmpleado);
+            int.TryParse(txtEdad.Text, out edad);
 
             oAlumnosBLL.ID = codigoEmpleado;
             oAlumnosBLL.Nombre = txtNombre.Text;
             oAlumnosBLL.PrimerApellido = txtPrimerApellido.Text;
             oAlumnosBLL.SegundoApellido = txtSegundoApellido.Text;
             oAlumnosBLL.Correo = txtCorreo.Text;
-
-            int IDDepartamento = 0;
-            int.TryParse(cbxDepartamento.SelectedValue.ToString(),out IDDepartamento);
-
-            oAlumnosBLL.Departamento = IDDepartamento;
-            oAlumnosBLL.Foto = imagenByte;
+            oAlumnosBLL.Edad = edad;
+            oAlumnosBLL.Nivel = cbxNivel.Text;
 
             return oAlumnosBLL;
+
         }
         private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -92,19 +75,8 @@ namespace adminAlumnos.PL
                 txtPrimerApellido.Text = dgvAlumnos.Rows[indice].Cells[2].Value.ToString();
                 txtSegundoApellido.Text = dgvAlumnos.Rows[indice].Cells[3].Value.ToString();
                 txtCorreo.Text = dgvAlumnos.Rows[indice].Cells[4].Value.ToString();
-                byte[] imagenBytes = (byte[])dgvAlumnos.Rows[indice].Cells[5].Value;
-
-                if (imagenBytes != null && imagenBytes.Length > 0)
-                {
-                    using (MemoryStream ms = new MemoryStream(imagenBytes))
-                    {
-                        picFoto.Image = Image.FromStream(ms);
-                    }
-                }
-                else
-                {
-                    picFoto.Image = null;
-                }
+                txtEdad.Text = dgvAlumnos.Rows[indice].Cells[5].Value.ToString();
+                cbxNivel.Text = dgvAlumnos.Rows[indice].Cells[6].Value.ToString();
 
 
                 btnAgregar.Enabled = false;
@@ -127,8 +99,8 @@ namespace adminAlumnos.PL
             txtPrimerApellido.Text = "";
             txtSegundoApellido.Text = "";
             txtCorreo.Text = "";
-            picFoto.Image = null;
-
+            txtEdad.Text = "";
+            cbxNivel.Text = "";
 
             btnAgregar.Enabled = true;
             btnBorrar.Enabled = false;
@@ -149,8 +121,9 @@ namespace adminAlumnos.PL
             dgvAlumnos.Columns[2].HeaderText = "APELLIDO P";
             dgvAlumnos.Columns[3].HeaderText = "APELLIDO M";
             dgvAlumnos.Columns[4].HeaderText = "CORREO";
-            dgvAlumnos.Columns[5].HeaderText = "FOTO";
+            dgvAlumnos.Columns[5].HeaderText = "EDAD";
             dgvAlumnos.Columns[6].HeaderText = "NIVEL";
+
 
 
         }
@@ -166,6 +139,32 @@ namespace adminAlumnos.PL
             oAlumnoDAL.Modificar(RecolectarDatos());
             LlenarGrid();
             LimpiarEntradas();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarDatos(txtBuscar.Text);
+        }
+        private void FiltrarDatos(string textoBusqueda)
+        {
+            DataTable dtOriginal = oAlumnoDAL.MostrarAlumnos().Tables[0];
+
+            DataView dv = new DataView(dtOriginal);
+
+            string filtro = string.Empty;
+
+            foreach (DataColumn column in dtOriginal.Columns)
+            {
+                if (column.DataType == typeof(string))
+                {
+                    if (!string.IsNullOrEmpty(filtro))
+                        filtro += " OR ";
+
+                    filtro += $"{column.ColumnName} LIKE '%{textoBusqueda}%'";
+                }
+            }
+            dv.RowFilter = filtro;
+            dgvAlumnos.DataSource = dv;
         }
     }
 }
