@@ -14,13 +14,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace adminAlumnos.PL
 {
-    public partial class frmMaestro : Form
+    public partial class frmAdmin : Form
     {
-        MaestroDAL oAlumnoDAL;
+        AdminDAL oAlumnoDAL;
         byte[] imagenByte;
-        public frmMaestro()
+        public frmAdmin()
         {
-            oAlumnoDAL = new MaestroDAL();    
+            oAlumnoDAL = new AdminDAL();    
             InitializeComponent();
             LlenarGrid();
             LimpiarEntradas();
@@ -39,9 +39,9 @@ namespace adminAlumnos.PL
 
         }
 
-        private MaestroBLL RecolectarDatos()
+        private AdminBLL RecolectarDatos()
         {
-            MaestroBLL oAlumnosBLL  = new MaestroBLL();
+            AdminBLL oAlumnosBLL  = new AdminBLL();
 
             int codigoEmpleado = 1;
             int edad;

@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace adminAlumnos.DAL
 {
-    internal class MaestroDAL
+    internal class AdminDAL
     {
         ConexionDAL conexion;
-        public MaestroDAL()
+        public AdminDAL()
         {
             conexion = new ConexionDAL();
         }
-        public bool Agregar(MaestroBLL oAlumnoBLL)
+        public bool Agregar(AdminBLL oAlumnoBLL)
         {
             SqlCommand SQLComando = new SqlCommand("INSERT INTO Empleado (nombre, primerapellido, segundoapellido, correo, edad, nivel)" +
                 "VALUES (@Nombre,@Apellido1,@Apellido2,@Correo,@Edad,@Nivel)");
@@ -30,7 +30,7 @@ namespace adminAlumnos.DAL
 
             return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
         }
-        public bool Eliminar(MaestroBLL oAlumnoBLL)
+        public bool Eliminar(AdminBLL oAlumnoBLL)
         {
             SqlCommand SQLComando = new SqlCommand("DELETE FROM Empleado WHERE ID=@ID");
             SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = oAlumnoBLL.ID;
@@ -39,7 +39,7 @@ namespace adminAlumnos.DAL
 
         }
 
-        public bool Modificar(MaestroBLL oAlumnoBLL)
+        public bool Modificar(AdminBLL oAlumnoBLL)
         {
             SqlCommand SQLComando = new SqlCommand("UPDATE Empleado SET nombre=@Nombre, primerapellido=@Apellido1, segundoapellido=@Apellido2, edad=@Edad, correo=@Correo,nivel=@Nivel WHERE ID=@ID");
             SQLComando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = oAlumnoBLL.Nombre;

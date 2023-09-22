@@ -1,6 +1,6 @@
 ﻿namespace adminAlumnos
 {
-    partial class Form1
+    partial class LoginAdmin
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginAdmin));
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -83,12 +83,12 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Perpetua Titling MT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(235, 161);
+            this.label3.Location = new System.Drawing.Point(160, 160);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(296, 41);
+            this.label3.Size = new System.Drawing.Size(438, 41);
             this.label3.TabIndex = 28;
-            this.label3.Text = "INICIAR SEsION";
+            this.label3.Text = "INICIAR SEsION ADMIN";
             // 
             // txtContraseña
             // 
@@ -125,7 +125,7 @@
             this.btnInicioSecion.UseVisualStyleBackColor = false;
             this.btnInicioSecion.Click += new System.EventHandler(this.btnInicioSecion_Click);
             // 
-            // Form1
+            // LoginAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,10 +138,8 @@
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.btnInicioSecion);
-            this.Name = "Form1";
+            this.Name = "LoginAdmin";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

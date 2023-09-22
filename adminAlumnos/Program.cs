@@ -17,7 +17,7 @@ namespace adminAlumnos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMaestro());
+            Application.Run(new Entrada());
         }
     }
 } 

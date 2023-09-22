@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace adminAlumnos.BLL
 {
-    internal class MaestroBLL
+    internal class AdminBLL
     {
         public int ID { get; set; }
         public string Nombre { get; set; }
