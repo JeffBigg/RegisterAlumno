@@ -55,6 +55,12 @@
     <Compile Include="Entrada.Designer.cs">
       <DependentUpon>Entrada.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\frmAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmAlumno.Designer.cs">
+      <DependentUpon>frmAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\LoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Entrada.resx">
       <DependentUpon>Entrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frmAlumno.resx">
+      <DependentUpon>frmAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>

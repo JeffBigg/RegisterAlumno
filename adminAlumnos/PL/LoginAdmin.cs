@@ -48,5 +48,10 @@ namespace adminAlumnos
                 }
             }
         }
+
+        private void LoginAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

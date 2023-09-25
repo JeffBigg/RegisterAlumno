@@ -59,6 +59,5 @@ namespace adminAlumnos.DAL
             SqlCommand sentencia = new SqlCommand("SELECT * FROM Empleado");
             return conexion.EjecutarSentencia(sentencia);
         }
-
     }
 }

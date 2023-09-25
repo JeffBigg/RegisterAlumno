@@ -140,6 +140,7 @@
             this.Controls.Add(this.btnInicioSecion);
             this.Name = "LoginAlumnos";
             this.Text = "LoginAlumnos";
+            this.Load += new System.EventHandler(this.LoginAlumnos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -17,7 +17,6 @@ namespace adminAlumnos.PL
     public partial class frmAdmin : Form
     {
         AdminDAL oAlumnoDAL;
-        byte[] imagenByte;
         public frmAdmin()
         {
             oAlumnoDAL = new AdminDAL();    
