@@ -46,39 +46,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\DepartamentoBLL.cs" />
-    <Compile Include="BLL\AlumnosBLL.cs" />
-    <Compile Include="DAL\AlumnosDAL.cs" />
+    <Compile Include="BLL\AdminBLL.cs" />
+    <Compile Include="DAL\AdminDAL.cs" />
     <Compile Include="DAL\ConexionDAL.cs" />
-    <Compile Include="DAL\DepartamentosDAL.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Entrada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Entrada.Designer.cs">
+      <DependentUpon>Entrada.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\frmDepartamentos.cs">
+    <Compile Include="PL\frmAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\frmDepartamentos.Designer.cs">
-      <DependentUpon>frmDepartamentos.cs</DependentUpon>
+    <Compile Include="PL\frmAlumno.Designer.cs">
+      <DependentUpon>frmAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\frmAlumnos.cs">
+    <Compile Include="PL\LoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\frmAlumnos.Designer.cs">
-      <DependentUpon>frmAlumnos.cs</DependentUpon>
+    <Compile Include="PL\LoginAdmin.Designer.cs">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\LoginAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\LoginAlumnos.Designer.cs">
+      <DependentUpon>LoginAlumnos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Entrada.resx">
+      <DependentUpon>Entrada.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\frmDepartamentos.resx">
-      <DependentUpon>frmDepartamentos.cs</DependentUpon>
+    <EmbeddedResource Include="PL\frmAlumno.resx">
+      <DependentUpon>frmAlumno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\frmAlumnos.resx">
-      <DependentUpon>frmAlumnos.cs</DependentUpon>
+    <EmbeddedResource Include="PL\LoginAdmin.resx">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\LoginAlumnos.resx">
+      <DependentUpon>LoginAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,6 +136,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\premium_photo-1667113478918-cfef93399991.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar-lupa%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar 32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

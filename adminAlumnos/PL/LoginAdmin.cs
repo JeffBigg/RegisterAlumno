@@ -13,17 +13,12 @@ using System.Windows.Forms;
 
 namespace adminAlumnos
 {
-    public partial class Form1 : Form
+    public partial class LoginAdmin : Form
     {
         private string cadenaConexion = "Data Source=localhost;Initial Catalog=dbSistema;Integrated Security=True";
-        public Form1()
+        public LoginAdmin()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnInicioSecion_Click(object sender, EventArgs e)
@@ -43,7 +38,7 @@ namespace adminAlumnos
 
                 if (resultado > 0)
                 {
-                    frmAlumnos registerForm = new frmAlumnos();
+                    frmAdmin registerForm = new frmAdmin();
                     registerForm.Show();
                     this.Hide();
                 }
@@ -52,6 +47,11 @@ namespace adminAlumnos
                     MessageBox.Show("INCORRECTO");
                 }
             }
+        }
+
+        private void LoginAdmin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

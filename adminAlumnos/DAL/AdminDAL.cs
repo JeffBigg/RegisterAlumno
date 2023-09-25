@@ -10,29 +10,27 @@ using System.Windows.Forms;
 
 namespace adminAlumnos.DAL
 {
-    internal class AlumnosDAL
+    internal class AdminDAL
     {
         ConexionDAL conexion;
-        public AlumnosDAL()
+        public AdminDAL()
         {
             conexion = new ConexionDAL();
         }
-        public bool Agregar(AlumnosBLL oAlumnoBLL)
+        public bool Agregar(AdminBLL oAlumnoBLL)
         {
-            SqlCommand SQLComando = new SqlCommand("INSERT INTO Empleado (nombre, primerapellido, segundoapellido, correo, foto)" +
-                "VALUES (@Nombre,@Apellido1,@Apellido2,@Correo,@Foto)");
+            SqlCommand SQLComando = new SqlCommand("INSERT INTO Empleado (nombre, primerapellido, segundoapellido, correo, edad, nivel)" +
+                "VALUES (@Nombre,@Apellido1,@Apellido2,@Correo,@Edad,@Nivel)");
             SQLComando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = oAlumnoBLL.Nombre;
             SQLComando.Parameters.Add("@Apellido1", SqlDbType.VarChar).Value = oAlumnoBLL.PrimerApellido;
             SQLComando.Parameters.Add("@Apellido2", SqlDbType.VarChar).Value = oAlumnoBLL.SegundoApellido;
             SQLComando.Parameters.Add("@Correo", SqlDbType.VarChar).Value = oAlumnoBLL.Correo;
-
-            SqlParameter fotoParam = new SqlParameter("@Foto", SqlDbType.VarBinary);
-            fotoParam.Value = oAlumnoBLL.Foto;
-            SQLComando.Parameters.Add(fotoParam);
+            SQLComando.Parameters.Add("@Edad", SqlDbType.Int).Value = oAlumnoBLL.Edad;
+            SQLComando.Parameters.Add("@Nivel", SqlDbType.VarChar).Value = oAlumnoBLL.Nivel;
 
             return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
         }
-        public bool Eliminar(AlumnosBLL oAlumnoBLL)
+        public bool Eliminar(AdminBLL oAlumnoBLL)
         {
             SqlCommand SQLComando = new SqlCommand("DELETE FROM Empleado WHERE ID=@ID");
             SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = oAlumnoBLL.ID;
@@ -41,16 +39,16 @@ namespace adminAlumnos.DAL
 
         }
 
-        public bool Modificar(AlumnosBLL oAlumnoBLL)
+        public bool Modificar(AdminBLL oAlumnoBLL)
         {
-            SqlCommand SQLComando = new SqlCommand("UPDATE Empleado SET nombre=@Nombre, primerapellido=@Apellido1, segundoapellido=@Apellido2, correo=@Correo, foto=@Foto WHERE ID=@ID");
+            SqlCommand SQLComando = new SqlCommand("UPDATE Empleado SET nombre=@Nombre, primerapellido=@Apellido1, segundoapellido=@Apellido2, edad=@Edad, correo=@Correo,nivel=@Nivel WHERE ID=@ID");
             SQLComando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = oAlumnoBLL.Nombre;
             SQLComando.Parameters.Add("@Apellido1", SqlDbType.VarChar).Value = oAlumnoBLL.PrimerApellido;
             SQLComando.Parameters.Add("@Apellido2", SqlDbType.VarChar).Value = oAlumnoBLL.SegundoApellido;
             SQLComando.Parameters.Add("@Correo", SqlDbType.VarChar).Value = oAlumnoBLL.Correo;
-            SQLComando.Parameters.Add("@Foto", SqlDbType.VarBinary).Value = oAlumnoBLL.Foto;
+            SQLComando.Parameters.Add("@Edad", SqlDbType.Int).Value = oAlumnoBLL.Edad;
             SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = oAlumnoBLL.ID;
-
+            SQLComando.Parameters.Add("@Nivel", SqlDbType.VarChar).Value = oAlumnoBLL.Nivel;
 
             return conexion.EjecutarComandoSinRetornoDatos(SQLComando);
         }
@@ -58,9 +56,8 @@ namespace adminAlumnos.DAL
 
         public DataSet MostrarAlumnos()
         {
-            SqlCommand sentencia = new SqlCommand("SELECT E.ID, E.nombre, E.primerapellido, E.segundoapellido, E.correo, E.foto, D.departamento FROM Empleado E LEFT JOIN Departamento D ON E.ID = D.ID");
+            SqlCommand sentencia = new SqlCommand("SELECT * FROM Empleado");
             return conexion.EjecutarSentencia(sentencia);
         }
-
     }
 }
